@@ -4,26 +4,58 @@
 
 <h1 align="center".>To-Do</h1>
 <ul class="list-group list-group-flush" id="notes">
-    {% for task in user.tasks %}
-    <li class="list-group-item">
-        {{ task.task }}
-        <button
-            type="button"
-            class="close"
-            onClick="deleteTask({{ task.id }})"
-            >
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </li>
+  {% for task in user.tasks %}
+  <li class="list-group-item d-flex align-items-center justify-content-between">
 
-    {% endfor %}
+    <div class="d-flex align-items-center gap-2">
+  
+      <input
+        type="checkbox"
+        {% if task.completed %}checked{% endif %}
+        onclick="toggleTask({{ task.id }})"
+      />
+
+      <span
+        {% if task.completed %}
+          style="text-decoration: line-through;"
+        {% endif %}
+      >
+        {{ task.task }}
+      </span>
+
+    </div>
+
+
+
+
+      {% if task.due_date %}
+        <small class="text-muted ms-2">
+          Due: {{ task.due_date }}
+        </small>
+      {% endif %}
+
+    <button
+      type="button"
+      class="close"
+      onclick="deleteTask({{ task.id }})"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+  </li>
+  {% endfor %}
 </ul>
 
+
 <form method="POST">
-    <textarea name="task" id="task" class="form-control"></textarea>
-    <br />
-    <div align="center">
-        <button type="submit" class="btn btn-primary">Add Task</button>
-    </div>
+  <textarea name="task" id="task" class="form-control"></textarea>
+  <br />
+  <input type="date" name="due_date" class="form-control" />
+
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Task</button>
+  </div>
 </form>
+
 {% endblock %}

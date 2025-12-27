@@ -6,6 +6,8 @@ from sqlalchemy.sql import func
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     task = db.Column(db.String(1000), nullable=False)
+    completed = db.Column(db.Boolean, default=False)
+    due_date = db.Column(db.Date, nullable=True)
     user_id = db.Column(
         db.Integer,
         db.ForeignKey('user.id'),
