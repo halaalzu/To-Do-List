@@ -42,8 +42,6 @@ The project emphasizes simplicity and logical structure, making it easy to under
 2. Open the project in your preferred development environment.
 3. Run the application according to the language or framework used.
 
-*(Add specific run instructions if required, e.g., `npm start`, `python main.py`, or opening an HTML file.)*
-
 ---
 
 ## Project Structure
