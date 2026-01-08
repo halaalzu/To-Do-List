@@ -30,9 +30,8 @@ The project emphasizes simplicity and logical structure, making it easy to under
 
 ## Technologies Used
 
-- Programming language(s): *(e.g., JavaScript, Python, HTML/CSS — update as needed)*
-- Frameworks or libraries: *(if applicable)*
-- Development tools: *(e.g., VS Code)*
+- Programming languages: JavaScript, Python, HTML/CSS
+- Development tools: VS Code, Flask
 
 ---
 
